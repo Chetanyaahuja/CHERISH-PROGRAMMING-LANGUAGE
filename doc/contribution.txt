@@ -1,5 +1,12 @@
-Till 2nd Milestone
-Grammar - Chetanya 
-Design - Drishti
-Parser - Natalya
-ANTLR - Himanshu
+INDIVIDUAL CONTRIBUTIONS TILL MILESTONE 2:
+  Grammar - Drishty, Chetanya, Himanshu
+  Design - Drishty, Chetanya
+  Gathered knowledge about Interpreter - Natalya, Himanshu
+  Gathered knowledge about Parser - Natalya, Chetanya
+
+FUTURE CONTRIBUTIONS(Tentative):
+  Lexical analyzer - Natalya, Himanshu
+  Parsing - Natalya, Himanshu
+  Intermediate Code - Drishty, Chetanya
+  Documentation - Drishty, Chetanya
+  Video - All
