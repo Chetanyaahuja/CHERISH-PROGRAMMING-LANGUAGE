@@ -2,7 +2,7 @@ INDIVIDUAL CONTRIBUTIONS TILL MILESTONE 2:
   Grammar - Drishty, Chetanya, Himanshu
   Design - Drishty, Chetanya
   Gathered knowledge about Interpreter - Natalya, Himanshu
-  Gathered knowledge about Parser - Natalya, Chetanya
+  Gathered knowledge about Parser - Natalya
 
 FUTURE CONTRIBUTIONS(Tentative):
   Lexical analyzer - Natalya, Himanshu
