@@ -3,7 +3,7 @@ grammar Cherish;
 
 progBlock
     : 'start' progCode 'end'
-    ;
+    ; 
 
 progCode
     : varDecl progCode
