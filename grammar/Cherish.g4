@@ -20,6 +20,7 @@ statements
     : assignStatement statements
     | conditionalExp statements
     | iterationExp statements
+    | 'display' word
     |
     ;
 
