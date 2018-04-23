@@ -3,7 +3,7 @@ grammar Cherish;
 
 progBlock
     : 'start' progCode 'end'
-    ; 
+    ;
 
 progCode
     : varDecl progCode
@@ -13,14 +13,13 @@ progCode
 
 varDecl
     : 'int' varAssign
-    | 'char' charAssign
+    | 'string' charAssign
     ;
 
 statements
     : assignStatement statements
     | conditionalExp statements
     | iterationExp statements
-    | 'display' word
     |
     ;
 
@@ -88,26 +87,17 @@ unary
     ;
 
 conditionalExp
-    : 'if' '('cond')' statements
-    | 'if' '('cond')' statements 'else' statements
+    : 'if' '('singleExp')' statements
+    | 'if' '('singleExp')' statements 'else' statements
     ;
 
 iterationExp
-    : 'while' '('cond')' statements
+    : 'while' '('singleExp')' statements
     ;
 
-cond
-    : cond '&&' andExp
-    | andExp
-    ;
-
-andExp
-    : andExp '||' singleExp
-    | singleExp
-    ;
 
 singleExp
-    : 'not' singleExp
+    : 'not' '('singleExp')'
     | relativeExp
     ;
 
