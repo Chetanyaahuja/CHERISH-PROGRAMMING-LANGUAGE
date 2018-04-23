@@ -25,10 +25,17 @@ public class Cherish
                 case "DISPLAY":
                     s.push(str);
                     break;
+                case "ADD":
+                    s.push(str);
+                    break;
                 case ";":
                     ArrayList<String> x = new ArrayList<>();
                     String popped = s.pop();
-                    while(!(popped.equals("MOV") || popped.equals("DISPLAY") ))
+                    while(!(popped.equals("MOV") || popped.equals("DISPLAY") || popped.equals("ADD") ||
+                            popped.equals("SUB") || popped.equals("MUL") || popped.equals("DIV") || popped.equals("REM")
+                            || popped.equals("INC") || popped.equals("DEC") || popped.equals("GEQL") ||
+                            popped.equals("LEQL") || popped.equals("LESS") || popped.equals("GRT")
+                            || popped.equals("EQL") || popped.equals("NEQL")))
                     {
                         x.add(popped);
                         popped = s.pop();
@@ -46,8 +53,207 @@ public class Cherish
                         String value = map.get(x.get(0));
                         System.out.print(value);
                     }
+                    if(popped.equals("ADD")) {
+                        int a,b;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        a = a + b;
+                        String val = "" + a;
+                        map.put(x.get(1), val);
+                    }
 
+                    if(popped.equals("SUB")) {
+                    int a,b;
+                    if(isNumeric(x.get(1)))
+                        a = Integer.parseInt(x.get(1));
+                    else
+                        a = Integer.parseInt(map.get(x.get(1)));
+                    if(isNumeric(x.get(0)))
+                        b = Integer.parseInt(x.get(0));
+                    else
+                        b = Integer.parseInt(map.get(x.get(0)));
+                    a = a - b;
+                    String val = "" + a;
+                    map.put(x.get(1), val);
+                }
 
+                    if(popped.equals("MUL")) {
+                        int a,b;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        a = a * b;
+                        String val = "" + a;
+                        map.put(x.get(1), val);
+                    }
+
+                    if(popped.equals("DIV")) {
+                        int a,b;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        a = a / b;
+                        String val = "" + a;
+                        map.put(x.get(1), val);
+                    }
+
+                    if(popped.equals("REM")) {
+                        int a,b;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        a = a % b;
+                        String val = "" + a;
+                        map.put(x.get(1), val);
+                    }
+
+                    if(popped.equals("INC")) {
+                        int a,b;
+                        if(isNumeric(x.get(0)))
+                            a = Integer.parseInt(x.get(0));
+                        else
+                            a = Integer.parseInt(map.get(x.get(0)));
+                      /*  if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));*/
+                        a = a + 1;
+                        String val = "" + a;
+                        map.put(x.get(0), val);
+                    }
+
+                    if(popped.equals("DEC")) {
+                        int a,b;
+                        if(isNumeric(x.get(0)))
+                            a = Integer.parseInt(x.get(0));
+                        else
+                            a = Integer.parseInt(map.get(x.get(0)));
+                      /*  if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));*/
+                        a = a - 1;
+                        String val = "" + a;
+                        map.put(x.get(0), val);
+                    }
+
+                    if(popped.equals("GEQL")) {
+                    int a,b;
+                    Boolean c;
+                    if(isNumeric(x.get(1)))
+                        a = Integer.parseInt(x.get(1));
+                    else
+                        a = Integer.parseInt(map.get(x.get(1)));
+                    if(isNumeric(x.get(0)))
+                        b = Integer.parseInt(x.get(0));
+                    else
+                        b = Integer.parseInt(map.get(x.get(0)));
+                    c = (a >= b);
+                    String val = "" + c;
+                    s.push(val);
+
+                }
+
+                    if(popped.equals("LEQL")) {
+                        int a,b;
+                        Boolean c;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        c = (a <= b);
+                        String val = "" + c;
+                        s.push(val);
+                    }
+
+                    if(popped.equals("LESS")) {
+                        int a,b;
+                        Boolean c;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        c = (a < b);
+                        String val = "" + c;
+                        s.push(val);
+                    }
+
+                    if(popped.equals("GRT")) {
+                        int a,b;
+                        Boolean c;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        c = (a > b);
+                        String val = "" + c;
+                        s.push(val);
+                    }
+
+                    if(popped.equals("EQL")) {
+                        int a,b;
+                        Boolean c;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        c = (a == b);
+                        String val = "" + c;
+                        s.push(val);
+                    }
+
+                    if(popped.equals("NEQL")) {
+                        int a,b;
+                        Boolean c;
+                        if(isNumeric(x.get(1)))
+                            a = Integer.parseInt(x.get(1));
+                        else
+                            a = Integer.parseInt(map.get(x.get(1)));
+                        if(isNumeric(x.get(0)))
+                            b = Integer.parseInt(x.get(0));
+                        else
+                            b = Integer.parseInt(map.get(x.get(0)));
+                        c = (a != b);
+                        String val = "" + c;
+                        s.push(val);
+                    }
                     break;
                 default:
                     s.push(str);
@@ -55,11 +261,23 @@ public class Cherish
             }
         }
     }
+    public static boolean isNumeric(String str)
+    {
+        try
+        {
+            double d = Double.parseDouble(str);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
+    }
 
     public static void main(String args[])
     {
         Cherish c = new Cherish();
-        String inputIntermediateCode = "MOV x 5 ; MOV y 100 ; DISPLAY x ;";
+        String inputIntermediateCode = "MOV x 5 ; MOV y 100 ; SUB x y ; ADD x 90 ; DISPLAY x ;";
         c.runCode(inputIntermediateCode);
     }
 }
