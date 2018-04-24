@@ -14,8 +14,8 @@ public class CherishCompiler {
                 ParseTree tree = parser.block();
                 ParseTreeWalker walker = new ParseTreeWalker();
                 filename = filename.substring(0,filename.length()-4);
-                CherishWalker epsilonWalk = new CherishWalker(filename);
-                walker.walk( epsilonWalk, tree );
+                CherishWalker CherishWalk = new CherishWalker(filename);
+                walker.walk( CherishWalk, tree );
 
 
             } catch (IOException e) {
