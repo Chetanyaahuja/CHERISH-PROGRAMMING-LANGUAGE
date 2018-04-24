@@ -4,6 +4,10 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import java.lang.*;
 
 public class CherishWalker  implements CherishListener {
+    public CherishWalker(String filename) {
+        
+    }
+    
     @java.lang.Override
     public void enterProgBlock(CherishParser.ProgBlockContext ctx) {
 
