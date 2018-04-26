@@ -1,4 +1,4 @@
-// Generated from Cherish.g4 by ANTLR 4.7.1
+package src.compiler;// Generated from ../grammar/Cherish.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -66,6 +66,16 @@ public interface CherishListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCharAssign(CherishParser.CharAssignContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CherishParser#wordNew}.
+	 * @param ctx the parse tree
+	 */
+	void enterWordNew(CherishParser.WordNewContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CherishParser#wordNew}.
+	 * @param ctx the parse tree
+	 */
+	void exitWordNew(CherishParser.WordNewContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
@@ -176,26 +186,6 @@ public interface CherishListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIterationExp(CherishParser.IterationExpContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#cond}.
-	 * @param ctx the parse tree
-	 */
-	void enterCond(CherishParser.CondContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#cond}.
-	 * @param ctx the parse tree
-	 */
-	void exitCond(CherishParser.CondContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#andExp}.
-	 * @param ctx the parse tree
-	 */
-	void enterAndExp(CherishParser.AndExpContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#andExp}.
-	 * @param ctx the parse tree
-	 */
-	void exitAndExp(CherishParser.AndExpContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CherishParser#singleExp}.
 	 * @param ctx the parse tree

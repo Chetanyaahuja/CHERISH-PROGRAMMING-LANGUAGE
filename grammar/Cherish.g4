@@ -8,7 +8,6 @@ progBlock
 progCode
     : varDecl progCode
     | statements
-    |
     ;
 
 varDecl
@@ -29,12 +28,15 @@ varAssign
     ;
 
 charAssign
-    : word '=' alphabet word
+    : word '=' wordNew
     ;
 
+wordNew: alphabet word;
+
+
 assignStatement
-    : word '=' arithExp
-    | arithExp
+    : word ('=' arithExp)?    #assignArith
+    | word ('=' unary)?       #assignUnary
     ;
 
 word

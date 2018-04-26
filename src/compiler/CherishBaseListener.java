@@ -1,4 +1,4 @@
-// Generated from Cherish.g4 by ANTLR 4.7.1
+package src.compiler;// Generated from ../grammar/Cherish.g4 by ANTLR 4.7.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -82,6 +82,18 @@ public class CherishBaseListener implements CherishListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCharAssign(CherishParser.CharAssignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWordNew(CherishParser.WordNewContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWordNew(CherishParser.WordNewContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -214,30 +226,6 @@ public class CherishBaseListener implements CherishListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIterationExp(CherishParser.IterationExpContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCond(CherishParser.CondContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCond(CherishParser.CondContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAndExp(CherishParser.AndExpContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAndExp(CherishParser.AndExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
