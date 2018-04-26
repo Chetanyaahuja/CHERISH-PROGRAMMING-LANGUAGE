@@ -13,12 +13,19 @@ public class MainCherish {
             String filename = "/Users/natalyakumar/Documents/Workspace/ser516/SER502-Spring2018-Team31/grammar/Example.txt";
             try {
                 CherishLexer lexer = new CherishLexer(CharStreams.fromFileName(filename));
-                CherishParser parser = new CherishParser(new CommonTokenStream(lexer));
 
                 CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+                CherishParser parser = new CherishParser(tokens);
+
                 ParseTree parseTree = parser.progBlock();
 
                 System.out.println(parseTree.toStringTree(parser));
+
+                CherishCompiler compiler = new CherishCompiler();
+                compiler.visit(parseTree);
+
+                System.out.println(compiler.getICOutput());
 
             } catch (IOException e) {
                 e.printStackTrace();

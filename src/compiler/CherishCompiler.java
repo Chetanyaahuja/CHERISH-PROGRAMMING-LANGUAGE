@@ -6,14 +6,18 @@ package src.compiler;
 
 public class CherishCompiler extends CherishBaseVisitor {
 
-    private class IntermediateCodeGenerator {
-        private String IntermediateOutput = "";
+    private class ICGenerator {
+        private String ICOutput = "";
         private void addIntermediateOutput(String output) {
-            this.IntermediateOutput += output + "\n";
+            this.ICOutput += output + "\n";
         }
     }
 
-    private IntermediateCodeGenerator intermediateCodeGenerator = new IntermediateCodeGenerator();
+    private ICGenerator intermediateCodeGenerator = new ICGenerator();
+
+    public String getICOutput() {
+        return intermediateCodeGenerator.ICOutput;
+    }
 
     @Override
     public Object visitProgBlock(CherishParser.ProgBlockContext ctx) {
@@ -39,7 +43,7 @@ public class CherishCompiler extends CherishBaseVisitor {
     public Object visitVarAssign(CherishParser.VarAssignContext ctx) {
         String identifier = ctx.word().getText();
         visit(ctx.numeral());
-        intermediateCodeGenerator.addIntermediateOutput("ADD " + identifier + "REG");
+        intermediateCodeGenerator.addIntermediateOutput("ADD " + identifier + " REG");
         return null;
     }
 
@@ -47,7 +51,7 @@ public class CherishCompiler extends CherishBaseVisitor {
     public Object visitCharAssign(CherishParser.CharAssignContext ctx) {
         String identifier = ctx.word().getText();
         visit(ctx.wordNew());
-        intermediateCodeGenerator.addIntermediateOutput("ADD" + identifier + "REG");
+        intermediateCodeGenerator.addIntermediateOutput("ADD " + identifier + " REG");
         return null;
     }
 
@@ -57,7 +61,7 @@ public class CherishCompiler extends CherishBaseVisitor {
         if(ctx.arithExp() != null){
             visit(ctx.arithExp());
         }
-        intermediateCodeGenerator.addIntermediateOutput("ADD" + identifier + "REG");
+        intermediateCodeGenerator.addIntermediateOutput("ADD " + identifier + " REG");
         return null;
     }
 
