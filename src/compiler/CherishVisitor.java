@@ -22,89 +22,123 @@ public interface CherishVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgCode(CherishParser.ProgCodeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#varDecl}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVarDecl(CherishParser.VarDeclContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link CherishParser#statements}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitStatements(CherishParser.StatementsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#varAssign}.
+	 * Visit a parse tree produced by the {@code integerAssign}
+	 * labeled alternative in {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVarAssign(CherishParser.VarAssignContext ctx);
+	T visitIntegerAssign(CherishParser.IntegerAssignContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#charAssign}.
+	 * Visit a parse tree produced by the {@code booleanAssign}
+	 * labeled alternative in {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCharAssign(CherishParser.CharAssignContext ctx);
+	T visitBooleanAssign(CherishParser.BooleanAssignContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#wordNew}.
+	 * Visit a parse tree produced by the {@code checkInteger}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWordNew(CherishParser.WordNewContext ctx);
+	T visitCheckInteger(CherishParser.CheckIntegerContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#assignStatement}.
+	 * Visit a parse tree produced by the {@code comparison}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssignStatement(CherishParser.AssignStatementContext ctx);
+	T visitComparison(CherishParser.ComparisonContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#word}.
+	 * Visit a parse tree produced by the {@code booleanAndOr}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWord(CherishParser.WordContext ctx);
+	T visitBooleanAndOr(CherishParser.BooleanAndOrContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#alphanumeral}.
+	 * Visit a parse tree produced by the {@code checkBoolean}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAlphanumeral(CherishParser.AlphanumeralContext ctx);
+	T visitCheckBoolean(CherishParser.CheckBooleanContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#symbol}.
+	 * Visit a parse tree produced by the {@code booleanExpression}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSymbol(CherishParser.SymbolContext ctx);
+	T visitBooleanExpression(CherishParser.BooleanExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#alphabet}.
+	 * Visit a parse tree produced by the {@code addExp}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAlphabet(CherishParser.AlphabetContext ctx);
+	T visitAddExp(CherishParser.AddExpContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#arithExp}.
+	 * Visit a parse tree produced by the {@code subExp}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitArithExp(CherishParser.ArithExpContext ctx);
+	T visitSubExp(CherishParser.SubExpContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#term}.
+	 * Visit a parse tree produced by the {@code termF}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTerm(CherishParser.TermContext ctx);
+	T visitTermF(CherishParser.TermFContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#factor}.
+	 * Visit a parse tree produced by the {@code mulExp}
+	 * labeled alternative in {@link CherishParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFactor(CherishParser.FactorContext ctx);
+	T visitMulExp(CherishParser.MulExpContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#unary}.
+	 * Visit a parse tree produced by the {@code divExp}
+	 * labeled alternative in {@link CherishParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitUnary(CherishParser.UnaryContext ctx);
+	T visitDivExp(CherishParser.DivExpContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code modExp}
+	 * labeled alternative in {@link CherishParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitModExp(CherishParser.ModExpContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code factorT}
+	 * labeled alternative in {@link CherishParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFactorT(CherishParser.FactorTContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code numeralFactor}
+	 * labeled alternative in {@link CherishParser#factor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumeralFactor(CherishParser.NumeralFactorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code wordFactor}
+	 * labeled alternative in {@link CherishParser#factor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWordFactor(CherishParser.WordFactorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CherishParser#conditionalExp}.
 	 * @param ctx the parse tree
@@ -112,63 +146,27 @@ public interface CherishVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitConditionalExp(CherishParser.ConditionalExpContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CherishParser#elseCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElseCondition(CherishParser.ElseConditionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CherishParser#iterationExp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitIterationExp(CherishParser.IterationExpContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#singleExp}.
+	 * Visit a parse tree produced by {@link CherishParser#displayStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSingleExp(CherishParser.SingleExpContext ctx);
+	T visitDisplayStatement(CherishParser.DisplayStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#relativeExp}.
+	 * Visit a parse tree produced by {@link CherishParser#comparator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRelativeExp(CherishParser.RelativeExpContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#operator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOperator(CherishParser.OperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#terminal}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTerminal(CherishParser.TerminalContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#boolVal}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBoolVal(CherishParser.BoolValContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#numeral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNumeral(CherishParser.NumeralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#digit}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDigit(CherishParser.DigitContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#lowercase}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLowercase(CherishParser.LowercaseContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CherishParser#uppercase}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUppercase(CherishParser.UppercaseContext ctx);
+	T visitComparator(CherishParser.ComparatorContext ctx);
 }

@@ -39,18 +39,6 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarDecl(CherishParser.VarDeclContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVarDecl(CherishParser.VarDeclContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterStatements(CherishParser.StatementsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -63,145 +51,193 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarAssign(CherishParser.VarAssignContext ctx) { }
+	@Override public void enterIntegerAssign(CherishParser.IntegerAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarAssign(CherishParser.VarAssignContext ctx) { }
+	@Override public void exitIntegerAssign(CherishParser.IntegerAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCharAssign(CherishParser.CharAssignContext ctx) { }
+	@Override public void enterBooleanAssign(CherishParser.BooleanAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCharAssign(CherishParser.CharAssignContext ctx) { }
+	@Override public void exitBooleanAssign(CherishParser.BooleanAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWordNew(CherishParser.WordNewContext ctx) { }
+	@Override public void enterCheckInteger(CherishParser.CheckIntegerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWordNew(CherishParser.WordNewContext ctx) { }
+	@Override public void exitCheckInteger(CherishParser.CheckIntegerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignStatement(CherishParser.AssignStatementContext ctx) { }
+	@Override public void enterComparison(CherishParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignStatement(CherishParser.AssignStatementContext ctx) { }
+	@Override public void exitComparison(CherishParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWord(CherishParser.WordContext ctx) { }
+	@Override public void enterBooleanAndOr(CherishParser.BooleanAndOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWord(CherishParser.WordContext ctx) { }
+	@Override public void exitBooleanAndOr(CherishParser.BooleanAndOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAlphanumeral(CherishParser.AlphanumeralContext ctx) { }
+	@Override public void enterCheckBoolean(CherishParser.CheckBooleanContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAlphanumeral(CherishParser.AlphanumeralContext ctx) { }
+	@Override public void exitCheckBoolean(CherishParser.CheckBooleanContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSymbol(CherishParser.SymbolContext ctx) { }
+	@Override public void enterBooleanExpression(CherishParser.BooleanExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSymbol(CherishParser.SymbolContext ctx) { }
+	@Override public void exitBooleanExpression(CherishParser.BooleanExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAlphabet(CherishParser.AlphabetContext ctx) { }
+	@Override public void enterAddExp(CherishParser.AddExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAlphabet(CherishParser.AlphabetContext ctx) { }
+	@Override public void exitAddExp(CherishParser.AddExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArithExp(CherishParser.ArithExpContext ctx) { }
+	@Override public void enterSubExp(CherishParser.SubExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArithExp(CherishParser.ArithExpContext ctx) { }
+	@Override public void exitSubExp(CherishParser.SubExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTerm(CherishParser.TermContext ctx) { }
+	@Override public void enterTermF(CherishParser.TermFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTerm(CherishParser.TermContext ctx) { }
+	@Override public void exitTermF(CherishParser.TermFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFactor(CherishParser.FactorContext ctx) { }
+	@Override public void enterMulExp(CherishParser.MulExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFactor(CherishParser.FactorContext ctx) { }
+	@Override public void exitMulExp(CherishParser.MulExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnary(CherishParser.UnaryContext ctx) { }
+	@Override public void enterDivExp(CherishParser.DivExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnary(CherishParser.UnaryContext ctx) { }
+	@Override public void exitDivExp(CherishParser.DivExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterModExp(CherishParser.ModExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitModExp(CherishParser.ModExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFactorT(CherishParser.FactorTContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFactorT(CherishParser.FactorTContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumeralFactor(CherishParser.NumeralFactorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumeralFactor(CherishParser.NumeralFactorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWordFactor(CherishParser.WordFactorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWordFactor(CherishParser.WordFactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -219,6 +255,18 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterElseCondition(CherishParser.ElseConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitElseCondition(CherishParser.ElseConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIterationExp(CherishParser.IterationExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -231,109 +279,25 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSingleExp(CherishParser.SingleExpContext ctx) { }
+	@Override public void enterDisplayStatement(CherishParser.DisplayStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSingleExp(CherishParser.SingleExpContext ctx) { }
+	@Override public void exitDisplayStatement(CherishParser.DisplayStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRelativeExp(CherishParser.RelativeExpContext ctx) { }
+	@Override public void enterComparator(CherishParser.ComparatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRelativeExp(CherishParser.RelativeExpContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOperator(CherishParser.OperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOperator(CherishParser.OperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTerminal(CherishParser.TerminalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTerminal(CherishParser.TerminalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterBoolVal(CherishParser.BoolValContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBoolVal(CherishParser.BoolValContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNumeral(CherishParser.NumeralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNumeral(CherishParser.NumeralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDigit(CherishParser.DigitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDigit(CherishParser.DigitContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterLowercase(CherishParser.LowercaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLowercase(CherishParser.LowercaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterUppercase(CherishParser.UppercaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitUppercase(CherishParser.UppercaseContext ctx) { }
+	@Override public void exitComparator(CherishParser.ComparatorContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

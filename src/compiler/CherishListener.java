@@ -27,16 +27,6 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitProgCode(CherishParser.ProgCodeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#varDecl}.
-	 * @param ctx the parse tree
-	 */
-	void enterVarDecl(CherishParser.VarDeclContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#varDecl}.
-	 * @param ctx the parse tree
-	 */
-	void exitVarDecl(CherishParser.VarDeclContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link CherishParser#statements}.
 	 * @param ctx the parse tree
 	 */
@@ -47,125 +37,197 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitStatements(CherishParser.StatementsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#varAssign}.
+	 * Enter a parse tree produced by the {@code integerAssign}
+	 * labeled alternative in {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterVarAssign(CherishParser.VarAssignContext ctx);
+	void enterIntegerAssign(CherishParser.IntegerAssignContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#varAssign}.
+	 * Exit a parse tree produced by the {@code integerAssign}
+	 * labeled alternative in {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitVarAssign(CherishParser.VarAssignContext ctx);
+	void exitIntegerAssign(CherishParser.IntegerAssignContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#charAssign}.
+	 * Enter a parse tree produced by the {@code booleanAssign}
+	 * labeled alternative in {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterCharAssign(CherishParser.CharAssignContext ctx);
+	void enterBooleanAssign(CherishParser.BooleanAssignContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#charAssign}.
+	 * Exit a parse tree produced by the {@code booleanAssign}
+	 * labeled alternative in {@link CherishParser#assignStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitCharAssign(CherishParser.CharAssignContext ctx);
+	void exitBooleanAssign(CherishParser.BooleanAssignContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#wordNew}.
+	 * Enter a parse tree produced by the {@code checkInteger}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterWordNew(CherishParser.WordNewContext ctx);
+	void enterCheckInteger(CherishParser.CheckIntegerContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#wordNew}.
+	 * Exit a parse tree produced by the {@code checkInteger}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitWordNew(CherishParser.WordNewContext ctx);
+	void exitCheckInteger(CherishParser.CheckIntegerContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#assignStatement}.
+	 * Enter a parse tree produced by the {@code comparison}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignStatement(CherishParser.AssignStatementContext ctx);
+	void enterComparison(CherishParser.ComparisonContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#assignStatement}.
+	 * Exit a parse tree produced by the {@code comparison}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignStatement(CherishParser.AssignStatementContext ctx);
+	void exitComparison(CherishParser.ComparisonContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#word}.
+	 * Enter a parse tree produced by the {@code booleanAndOr}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterWord(CherishParser.WordContext ctx);
+	void enterBooleanAndOr(CherishParser.BooleanAndOrContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#word}.
+	 * Exit a parse tree produced by the {@code booleanAndOr}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitWord(CherishParser.WordContext ctx);
+	void exitBooleanAndOr(CherishParser.BooleanAndOrContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#alphanumeral}.
+	 * Enter a parse tree produced by the {@code checkBoolean}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterAlphanumeral(CherishParser.AlphanumeralContext ctx);
+	void enterCheckBoolean(CherishParser.CheckBooleanContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#alphanumeral}.
+	 * Exit a parse tree produced by the {@code checkBoolean}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitAlphanumeral(CherishParser.AlphanumeralContext ctx);
+	void exitCheckBoolean(CherishParser.CheckBooleanContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#symbol}.
+	 * Enter a parse tree produced by the {@code booleanExpression}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterSymbol(CherishParser.SymbolContext ctx);
+	void enterBooleanExpression(CherishParser.BooleanExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#symbol}.
+	 * Exit a parse tree produced by the {@code booleanExpression}
+	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitSymbol(CherishParser.SymbolContext ctx);
+	void exitBooleanExpression(CherishParser.BooleanExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#alphabet}.
+	 * Enter a parse tree produced by the {@code addExp}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterAlphabet(CherishParser.AlphabetContext ctx);
+	void enterAddExp(CherishParser.AddExpContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#alphabet}.
+	 * Exit a parse tree produced by the {@code addExp}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitAlphabet(CherishParser.AlphabetContext ctx);
+	void exitAddExp(CherishParser.AddExpContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#arithExp}.
+	 * Enter a parse tree produced by the {@code subExp}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterArithExp(CherishParser.ArithExpContext ctx);
+	void enterSubExp(CherishParser.SubExpContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#arithExp}.
+	 * Exit a parse tree produced by the {@code subExp}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitArithExp(CherishParser.ArithExpContext ctx);
+	void exitSubExp(CherishParser.SubExpContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#term}.
+	 * Enter a parse tree produced by the {@code termF}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 */
-	void enterTerm(CherishParser.TermContext ctx);
+	void enterTermF(CherishParser.TermFContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#term}.
+	 * Exit a parse tree produced by the {@code termF}
+	 * labeled alternative in {@link CherishParser#arithExp}.
 	 * @param ctx the parse tree
 	 */
-	void exitTerm(CherishParser.TermContext ctx);
+	void exitTermF(CherishParser.TermFContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#factor}.
+	 * Enter a parse tree produced by the {@code mulExp}
+	 * labeled alternative in {@link CherishParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void enterFactor(CherishParser.FactorContext ctx);
+	void enterMulExp(CherishParser.MulExpContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#factor}.
+	 * Exit a parse tree produced by the {@code mulExp}
+	 * labeled alternative in {@link CherishParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void exitFactor(CherishParser.FactorContext ctx);
+	void exitMulExp(CherishParser.MulExpContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#unary}.
+	 * Enter a parse tree produced by the {@code divExp}
+	 * labeled alternative in {@link CherishParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void enterUnary(CherishParser.UnaryContext ctx);
+	void enterDivExp(CherishParser.DivExpContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#unary}.
+	 * Exit a parse tree produced by the {@code divExp}
+	 * labeled alternative in {@link CherishParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void exitUnary(CherishParser.UnaryContext ctx);
+	void exitDivExp(CherishParser.DivExpContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code modExp}
+	 * labeled alternative in {@link CherishParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterModExp(CherishParser.ModExpContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code modExp}
+	 * labeled alternative in {@link CherishParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitModExp(CherishParser.ModExpContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code factorT}
+	 * labeled alternative in {@link CherishParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFactorT(CherishParser.FactorTContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code factorT}
+	 * labeled alternative in {@link CherishParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFactorT(CherishParser.FactorTContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code numeralFactor}
+	 * labeled alternative in {@link CherishParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumeralFactor(CherishParser.NumeralFactorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code numeralFactor}
+	 * labeled alternative in {@link CherishParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumeralFactor(CherishParser.NumeralFactorContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code wordFactor}
+	 * labeled alternative in {@link CherishParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterWordFactor(CherishParser.WordFactorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code wordFactor}
+	 * labeled alternative in {@link CherishParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitWordFactor(CherishParser.WordFactorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CherishParser#conditionalExp}.
 	 * @param ctx the parse tree
@@ -177,6 +239,16 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitConditionalExp(CherishParser.ConditionalExpContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CherishParser#elseCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterElseCondition(CherishParser.ElseConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CherishParser#elseCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitElseCondition(CherishParser.ElseConditionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CherishParser#iterationExp}.
 	 * @param ctx the parse tree
 	 */
@@ -187,93 +259,23 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitIterationExp(CherishParser.IterationExpContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#singleExp}.
+	 * Enter a parse tree produced by {@link CherishParser#displayStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterSingleExp(CherishParser.SingleExpContext ctx);
+	void enterDisplayStatement(CherishParser.DisplayStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#singleExp}.
+	 * Exit a parse tree produced by {@link CherishParser#displayStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitSingleExp(CherishParser.SingleExpContext ctx);
+	void exitDisplayStatement(CherishParser.DisplayStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#relativeExp}.
+	 * Enter a parse tree produced by {@link CherishParser#comparator}.
 	 * @param ctx the parse tree
 	 */
-	void enterRelativeExp(CherishParser.RelativeExpContext ctx);
+	void enterComparator(CherishParser.ComparatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#relativeExp}.
+	 * Exit a parse tree produced by {@link CherishParser#comparator}.
 	 * @param ctx the parse tree
 	 */
-	void exitRelativeExp(CherishParser.RelativeExpContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#operator}.
-	 * @param ctx the parse tree
-	 */
-	void enterOperator(CherishParser.OperatorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#operator}.
-	 * @param ctx the parse tree
-	 */
-	void exitOperator(CherishParser.OperatorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#terminal}.
-	 * @param ctx the parse tree
-	 */
-	void enterTerminal(CherishParser.TerminalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#terminal}.
-	 * @param ctx the parse tree
-	 */
-	void exitTerminal(CherishParser.TerminalContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#boolVal}.
-	 * @param ctx the parse tree
-	 */
-	void enterBoolVal(CherishParser.BoolValContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#boolVal}.
-	 * @param ctx the parse tree
-	 */
-	void exitBoolVal(CherishParser.BoolValContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#numeral}.
-	 * @param ctx the parse tree
-	 */
-	void enterNumeral(CherishParser.NumeralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#numeral}.
-	 * @param ctx the parse tree
-	 */
-	void exitNumeral(CherishParser.NumeralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#digit}.
-	 * @param ctx the parse tree
-	 */
-	void enterDigit(CherishParser.DigitContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#digit}.
-	 * @param ctx the parse tree
-	 */
-	void exitDigit(CherishParser.DigitContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#lowercase}.
-	 * @param ctx the parse tree
-	 */
-	void enterLowercase(CherishParser.LowercaseContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#lowercase}.
-	 * @param ctx the parse tree
-	 */
-	void exitLowercase(CherishParser.LowercaseContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CherishParser#uppercase}.
-	 * @param ctx the parse tree
-	 */
-	void enterUppercase(CherishParser.UppercaseContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CherishParser#uppercase}.
-	 * @param ctx the parse tree
-	 */
-	void exitUppercase(CherishParser.UppercaseContext ctx);
+	void exitComparator(CherishParser.ComparatorContext ctx);
 }

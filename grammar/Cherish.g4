@@ -6,143 +6,96 @@ progBlock
     ;
 
 progCode
-    : varDecl progCode
-    | statements
+    : statements+
     ;
 
-varDecl
-    : 'int' varAssign
-    | 'string' charAssign
-    ;
 
 statements
-    : assignStatement statements
-    | conditionalExp statements
-    | iterationExp statements
-    | 'display' word
-    |
+    :
+    ( assignStatement
+    | conditionalExp
+    | iterationExp
+    | displayStatement
+    )
     ;
-
-varAssign
-    : word '=' numeral
-    ;
-
-charAssign
-    : word '=' wordNew
-    ;
-
-wordNew: alphabet word;
 
 
 assignStatement
-    : word ('=' arithExp)?    #assignArith
-    | word ('=' unary)?       #assignUnary
+    : 'int' LOWERCASE ('=' arithExp)?                     #integerAssign
+    | LOWERCASE '=' arithExp                              #integerAssign
+    | 'boolean' LOWERCASE ('=' boolExp)?                  #booleanAssign
+    | LOWERCASE '=' boolExp		                          #booleanAssign
     ;
 
-word
-    : alphabet alphanumeral
-    | '_' alphanumeral
+boolExp
+    : boolExp operation=('=='|'!=') boolExp			     	#booleanExpression
+    | boolExp operation=('&&'| '||') boolExp				#booleanAndOr
+    | ('!')? LOWERCASE                                      #checkInteger
+    | ('!')? BOOLEAN                                        #checkBoolean
+    | comparator                                            #comparison
     ;
 
-alphanumeral
-    : alphabet alphanumeral
-    | numeral alphanumeral
-    | symbol
-    ;
-
-symbol
-    : alphabet
-    | numeral
-    |
-    ;
-
-alphabet
-    : lowercase
-    | uppercase
-    ;
 
 arithExp
-    : term '+' arithExp
-    | term '-' arithExp
-    | term
+    : term '+' arithExp         #addExp
+    | term '-' arithExp         #subExp
+    | term                      #termF
     ;
 
 term
-    : factor '*' term
-    | factor '/' term
-    | factor '%' term
-    | factor
+    : factor '*' term           #mulExp
+    | factor '/' term           #divExp
+    | factor '%' term           #modExp
+    | factor                    #factorT
     ;
 
 factor
-    : unary
-    | '(' unary ')'
-    | '(rightArithExp)'
-    | numeral
-    | word
-    ;
-
-unary
-    : numeral '++'
-    | numeral '--'
-    | word '++'
-    | word '--'
+    : NUMERAL                   #numeralFactor
+    | LOWERCASE                 #wordFactor
     ;
 
 conditionalExp
-    : 'if' '('singleExp')' statements
-    | 'if' '('singleExp')' statements 'else' statements
+    : 'if' '('boolExp')' '{' progCode '}' (elseCondition)?
+    ;
+
+elseCondition
+    : 'else' '{' progCode '}'
     ;
 
 iterationExp
-    : 'while' '('singleExp')' statements
+    : 'while' '('boolExp')' '{' progCode '}'
     ;
 
 
-singleExp
-    : 'not' '('singleExp')'
-    | relativeExp
+displayStatement
+    : 'Display' '(' (NUMERAL|LOWERCASE|BOOLEAN| arithExp) ')'
     ;
 
-relativeExp
-    : terminal operator terminal
-    | boolVal
-    ;
-
-operator
-    : '<='
+comparator
+    : arithExp operation=
+    ( '<='
     | '<'
     | '>'
     | '>='
     | '=='
     | '!='
+    ) arithExp
     ;
 
-terminal
-    : word
-    | numeral
-    ;
 
-boolVal
+
+BOOLEAN
     : 'true'
     | 'false'
     ;
 
-numeral
-    : digit numeral
-    | digit
+NUMERAL
+    : [1-9] [0-9]*
+    | '0'
     ;
 
-digit
-    : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
-    ;
-
-lowercase
+LOWERCASE
     : 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'
-    ;
-
-uppercase
-    : 'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z'
     ;
 
 WS
