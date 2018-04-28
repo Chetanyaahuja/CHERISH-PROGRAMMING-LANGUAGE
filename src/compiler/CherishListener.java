@@ -1,4 +1,5 @@
-package src.compiler;// Generated from ../grammar/Cherish.g4 by ANTLR 4.7.1
+package src.compiler;
+// Generated from ../grammar/Cherish.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -97,18 +98,6 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitCheckLowercase(CherishParser.CheckLowercaseContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code checkBoolean}
-	 * labeled alternative in {@link CherishParser#boolExp}.
-	 * @param ctx the parse tree
-	 */
-	void enterCheckBoolean(CherishParser.CheckBooleanContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code checkBoolean}
-	 * labeled alternative in {@link CherishParser#boolExp}.
-	 * @param ctx the parse tree
-	 */
-	void exitCheckBoolean(CherishParser.CheckBooleanContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code booleanExpression}
 	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
@@ -120,6 +109,18 @@ public interface CherishListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBooleanExpression(CherishParser.BooleanExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code checkBoolean}
+	 * labeled alternative in {@link CherishParser#boolExp}.
+	 * @param ctx the parse tree
+	 */
+	void enterCheckBoolean(CherishParser.CheckBooleanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code checkBoolean}
+	 * labeled alternative in {@link CherishParser#boolExp}.
+	 * @param ctx the parse tree
+	 */
+	void exitCheckBoolean(CherishParser.CheckBooleanContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code addExp}
 	 * labeled alternative in {@link CherishParser#arithExp}.
