@@ -14,7 +14,7 @@ if (a > b) {
 } else {
     Display(b)
 }
-while(b > 2) {
+while(b >= 2) {
 a = a+1
 Display (a+b)
 b = b-1
