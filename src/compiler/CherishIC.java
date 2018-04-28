@@ -4,11 +4,6 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-/**
- * @author Drishty Kapoor
- * @author Chetanya Ahuja
- */
-
 public class CherishIC extends CherishBaseListener {
 	static StringBuilder ic = new StringBuilder();
 	
@@ -136,10 +131,19 @@ public class CherishIC extends CherishBaseListener {
 	@Override public void exitBooleanExpression(CherishParser.BooleanExpressionContext ctx) { 
 		if (ctx.getText().contains("==")) {
 			ic.append("EQL" + '\n');
+		}else if (ctx.getText().contains("<=")) {
+			ic.append("LEQL" + '\n');
+		}else if (ctx.getText().contains(">=")) {
+			ic.append("GEQL" + '\n');
+		}else if (ctx.getText().contains("<")) {
+			ic.append("LT" + '\n');
+		}else if (ctx.getText().contains(">")) {
+			ic.append("GT" + '\n');
 		}else if (ctx.getText().contains("!=")) {
 			ic.append("NEQL" + '\n');
 		}
 		
+		ic.append("EXIT_BOOL" + '\n');
 	}
 	/**
 	 * {@inheritDoc}
@@ -192,7 +196,9 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMulExp(CherishParser.MulExpContext ctx) { }
+	@Override public void exitMulExp(CherishParser.MulExpContext ctx) {
+		ic.append("MUL " + "\n");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -204,7 +210,9 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDivExp(CherishParser.DivExpContext ctx) { }
+	@Override public void exitDivExp(CherishParser.DivExpContext ctx) { 
+		ic.append("DIV " + "\n");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -216,7 +224,9 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitModExp(CherishParser.ModExpContext ctx) { }
+	@Override public void exitModExp(CherishParser.ModExpContext ctx) {
+		ic.append("MOD " + "\n");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -234,7 +244,9 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumeralFactor(CherishParser.NumeralFactorContext ctx) { }
+	@Override public void enterNumeralFactor(CherishParser.NumeralFactorContext ctx) { 
+		ic.append("PUSH " + ctx.getText() + '\n');
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -246,7 +258,9 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWordFactor(CherishParser.WordFactorContext ctx) { }
+	@Override public void enterWordFactor(CherishParser.WordFactorContext ctx) { 
+		ic.append("GET " + ctx.getText() + '\n');
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -258,19 +272,25 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConditionalExp(CherishParser.ConditionalExpContext ctx) { }
+	@Override public void enterConditionalExp(CherishParser.ConditionalExpContext ctx) {
+		ic.append("IF" + '\n');
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConditionalExp(CherishParser.ConditionalExpContext ctx) { }
+	@Override public void exitConditionalExp(CherishParser.ConditionalExpContext ctx) { 
+		ic.append("END_IF" + '\n');
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElseCondition(CherishParser.ElseConditionContext ctx) { }
+	@Override public void enterElseCondition(CherishParser.ElseConditionContext ctx) { 
+		ic.append("ELSE" + '\n');
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -282,13 +302,17 @@ public class CherishIC extends CherishBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterationExp(CherishParser.IterationExpContext ctx) { }
+	@Override public void enterIterationExp(CherishParser.IterationExpContext ctx) { 
+		ic.append("ITERATE" + "\n");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterationExp(CherishParser.IterationExpContext ctx) { }
+	@Override public void exitIterationExp(CherishParser.IterationExpContext ctx) { 
+		ic.append("ITERATE_END" + "\n");
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -301,8 +325,8 @@ public class CherishIC extends CherishBaseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDisplayStatement(CherishParser.DisplayStatementContext ctx) {
-        ic.append("DISPLAY" + '\n');
-    }
+		ic.append("DISPLAY" + '\n');
+	}
 	/**
 	 * {@inheritDoc}
 	 *
