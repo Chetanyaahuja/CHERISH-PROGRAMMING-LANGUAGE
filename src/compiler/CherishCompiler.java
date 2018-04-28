@@ -136,7 +136,7 @@ public class CherishCompiler extends CherishBaseVisitor {
         visit(ctx.term());
         intermediateCodeGenerator.addIntermediateOutput("ADD B REGISTER");
         String multiply = ctx.getText();
-        intermediateCodeGenerator.addIntermediateOutput(multiply);
+        intermediateCodeGenerator.addIntermediateOutput(" MULTIPLY A B");
         return null;
     }
 

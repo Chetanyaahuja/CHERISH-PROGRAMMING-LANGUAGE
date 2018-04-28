@@ -1,7 +1,5 @@
 start
 int a = 10
 int b = 15
-while(a > b) {
-Display (a)
-}
+int c = a + b
 end
