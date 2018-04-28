@@ -9,7 +9,6 @@ progCode
     : statements+
     ;
 
-
 statements
     :
     ( assignStatement
@@ -19,7 +18,6 @@ statements
     )
     ;
 
-
 assignStatement
     : 'int' LOWERCASE ('=' arithExp)?                     #integerAssign
     | LOWERCASE '=' arithExp                              #integerAssign
@@ -28,13 +26,12 @@ assignStatement
     ;
 
 boolExp
-    : boolExp operation=('=='|'!=') boolExp			     	#booleanExpression
-    | boolExp operation=('&&'| '||') boolExp				#booleanAndOr
-    | (NOT)? LOWERCASE                                      #checkLowercase
-    | (NOT)? BOOLEAN                                        #checkBoolean
-    | comparator                                            #comparison
+    : arithExp ('=='|'!=' | '>' | '<' | '<=' | '>=') arithExp	#booleanExpression
+    | boolExp ('&&'| '||') boolExp								#booleanAndOr
+    | (NOT)? LOWERCASE                                      	#checkLowercase
+    | (NOT)? BOOLEAN                                        	#checkBoolean
+    | comparator                                            	#comparison
     ;
-
 
 arithExp
     : term '+' arithExp         #addExp
@@ -68,7 +65,7 @@ iterationExp
 
 
 displayStatement
-    : 'Display' '(' (NUMERAL|LOWERCASE|BOOLEAN| arithExp) ')'
+    : 'Display' '(' (arithExp) ')'
     ;
 
 comparator
@@ -82,16 +79,14 @@ comparator
 
 NOT : '!';
 
-
-
 BOOLEAN
     : 'true'
     | 'false'
     ;
 
 GREATEREQUAL : '>=';
-GREATER      : '>';
-LESSER       : '<';
+GREATER      : '>' ;
+LESSER       : '<' ;
 LESSEREQUAL  : '<=';
 EQUALS       : '==';
 NOTEQUALS    : '!=';
