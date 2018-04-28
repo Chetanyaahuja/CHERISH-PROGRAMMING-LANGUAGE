@@ -1,4 +1,5 @@
-package src.compiler;// Generated from ../grammar/Cherish.g4 by ANTLR 4.7.1
+package src.compiler;
+// Generated from ../grammar/Cherish.g4 by ANTLR 4.7.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -111,18 +112,6 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCheckBoolean(CherishParser.CheckBooleanContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCheckBoolean(CherishParser.CheckBooleanContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterBooleanExpression(CherishParser.BooleanExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -130,6 +119,18 @@ public class CherishBaseListener implements CherishListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBooleanExpression(CherishParser.BooleanExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCheckBoolean(CherishParser.CheckBooleanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCheckBoolean(CherishParser.CheckBooleanContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
