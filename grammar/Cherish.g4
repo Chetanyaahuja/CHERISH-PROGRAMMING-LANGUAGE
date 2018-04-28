@@ -30,8 +30,8 @@ assignStatement
 boolExp
     : boolExp operation=('=='|'!=') boolExp			     	#booleanExpression
     | boolExp operation=('&&'| '||') boolExp				#booleanAndOr
-    | ('!')? LOWERCASE                                      #checkInteger
-    | ('!')? BOOLEAN                                        #checkBoolean
+    | (NOT)? LOWERCASE                                      #checkLowercase
+    | (NOT)? BOOLEAN                                        #checkBoolean
     | comparator                                            #comparison
     ;
 
@@ -72,15 +72,15 @@ displayStatement
     ;
 
 comparator
-    : arithExp operation=
-    ( '<='
-    | '<'
-    | '>'
-    | '>='
-    | '=='
-    | '!='
-    ) arithExp
+    : arithExp GREATEREQUAL arithExp                #greaterThanEqual
+    | arithExp GREATER arithExp                     #greater
+    | arithExp LESSER arithExp                      #lessThan
+    | arithExp LESSEREQUAL arithExp                 #lessThanEqual
+    | arithExp EQUALS arithExp                      #equal
+    | arithExp NOTEQUALS arithExp                   #notEqual
     ;
+
+NOT : '!';
 
 
 
@@ -88,6 +88,13 @@ BOOLEAN
     : 'true'
     | 'false'
     ;
+
+GREATEREQUAL : '>=';
+GREATER      : '>';
+LESSER       : '<';
+LESSEREQUAL  : '<=';
+EQUALS       : '==';
+NOTEQUALS    : '!=';
 
 NUMERAL
     : [1-9] [0-9]*

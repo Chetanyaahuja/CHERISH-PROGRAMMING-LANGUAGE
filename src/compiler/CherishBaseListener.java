@@ -75,18 +75,6 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCheckInteger(CherishParser.CheckIntegerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCheckInteger(CherishParser.CheckIntegerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterComparison(CherishParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -106,6 +94,18 @@ public class CherishBaseListener implements CherishListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBooleanAndOr(CherishParser.BooleanAndOrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCheckLowercase(CherishParser.CheckLowercaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCheckLowercase(CherishParser.CheckLowercaseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -291,13 +291,73 @@ public class CherishBaseListener implements CherishListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparator(CherishParser.ComparatorContext ctx) { }
+	@Override public void enterGreaterThanEqual(CherishParser.GreaterThanEqualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparator(CherishParser.ComparatorContext ctx) { }
+	@Override public void exitGreaterThanEqual(CherishParser.GreaterThanEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGreater(CherishParser.GreaterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGreater(CherishParser.GreaterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLessThan(CherishParser.LessThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLessThan(CherishParser.LessThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLessThanEqual(CherishParser.LessThanEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLessThanEqual(CherishParser.LessThanEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEqual(CherishParser.EqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEqual(CherishParser.EqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNotEqual(CherishParser.NotEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNotEqual(CherishParser.NotEqualContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

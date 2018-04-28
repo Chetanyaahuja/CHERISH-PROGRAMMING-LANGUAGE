@@ -42,13 +42,6 @@ public interface CherishVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBooleanAssign(CherishParser.BooleanAssignContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code checkInteger}
-	 * labeled alternative in {@link CherishParser#boolExp}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCheckInteger(CherishParser.CheckIntegerContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code comparison}
 	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
@@ -62,6 +55,13 @@ public interface CherishVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBooleanAndOr(CherishParser.BooleanAndOrContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code checkLowercase}
+	 * labeled alternative in {@link CherishParser#boolExp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCheckLowercase(CherishParser.CheckLowercaseContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code checkBoolean}
 	 * labeled alternative in {@link CherishParser#boolExp}.
@@ -164,9 +164,45 @@ public interface CherishVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDisplayStatement(CherishParser.DisplayStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CherishParser#comparator}.
+	 * Visit a parse tree produced by the {@code greaterThanEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitComparator(CherishParser.ComparatorContext ctx);
+	T visitGreaterThanEqual(CherishParser.GreaterThanEqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code greater}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGreater(CherishParser.GreaterContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLessThan(CherishParser.LessThanContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code lessThanEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLessThanEqual(CherishParser.LessThanEqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqual(CherishParser.EqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code notEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotEqual(CherishParser.NotEqualContext ctx);
 }

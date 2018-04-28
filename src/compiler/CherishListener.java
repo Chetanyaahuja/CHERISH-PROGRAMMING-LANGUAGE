@@ -61,18 +61,6 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitBooleanAssign(CherishParser.BooleanAssignContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code checkInteger}
-	 * labeled alternative in {@link CherishParser#boolExp}.
-	 * @param ctx the parse tree
-	 */
-	void enterCheckInteger(CherishParser.CheckIntegerContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code checkInteger}
-	 * labeled alternative in {@link CherishParser#boolExp}.
-	 * @param ctx the parse tree
-	 */
-	void exitCheckInteger(CherishParser.CheckIntegerContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code comparison}
 	 * labeled alternative in {@link CherishParser#boolExp}.
 	 * @param ctx the parse tree
@@ -96,6 +84,18 @@ public interface CherishListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBooleanAndOr(CherishParser.BooleanAndOrContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code checkLowercase}
+	 * labeled alternative in {@link CherishParser#boolExp}.
+	 * @param ctx the parse tree
+	 */
+	void enterCheckLowercase(CherishParser.CheckLowercaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code checkLowercase}
+	 * labeled alternative in {@link CherishParser#boolExp}.
+	 * @param ctx the parse tree
+	 */
+	void exitCheckLowercase(CherishParser.CheckLowercaseContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code checkBoolean}
 	 * labeled alternative in {@link CherishParser#boolExp}.
@@ -269,13 +269,75 @@ public interface CherishListener extends ParseTreeListener {
 	 */
 	void exitDisplayStatement(CherishParser.DisplayStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CherishParser#comparator}.
+	 * Enter a parse tree produced by the {@code greaterThanEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparator(CherishParser.ComparatorContext ctx);
+	void enterGreaterThanEqual(CherishParser.GreaterThanEqualContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CherishParser#comparator}.
+	 * Exit a parse tree produced by the {@code greaterThanEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparator(CherishParser.ComparatorContext ctx);
+	void exitGreaterThanEqual(CherishParser.GreaterThanEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code greater}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void enterGreater(CherishParser.GreaterContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code greater}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void exitGreater(CherishParser.GreaterContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessThan(CherishParser.LessThanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessThan(CherishParser.LessThanContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessThanEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessThanEqual(CherishParser.LessThanEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessThanEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessThanEqual(CherishParser.LessThanEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqual(CherishParser.EqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqual(CherishParser.EqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code notEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void enterNotEqual(CherishParser.NotEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code notEqual}
+	 * labeled alternative in {@link CherishParser#comparator}.
+	 * @param ctx the parse tree
+	 */
+	void exitNotEqual(CherishParser.NotEqualContext ctx);
 }

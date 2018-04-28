@@ -56,18 +56,21 @@ public class CherishCompiler extends CherishBaseVisitor {
     }
 
     @Override
-    public Object visitCheckInteger(CherishParser.CheckIntegerContext ctx) {
-        
-        return super.visitCheckInteger(ctx);
+    public Object visitComparison(CherishParser.ComparisonContext ctx) {
+        if(ctx.comparator() != null){
+            intermediateCodeGenerator.addIntermediateOutput("ADD REGISTER" );
+        }
+        return null;
     }
 
     @Override
-    public Object visitComparison(CherishParser.ComparisonContext ctx) {
-        return super.visitComparison(ctx);
+    public Object visitCheckLowercase(CherishParser.CheckLowercaseContext ctx) {
+        return super.visitCheckLowercase(ctx);
     }
 
     @Override
     public Object visitBooleanAndOr(CherishParser.BooleanAndOrContext ctx) {
+
         return super.visitBooleanAndOr(ctx);
     }
 
@@ -75,7 +78,16 @@ public class CherishCompiler extends CherishBaseVisitor {
     public Object visitCheckBoolean(CherishParser.CheckBooleanContext ctx) {
         String val = ctx.BOOLEAN().getText();
         boolean bol;
-        
+        if(val == "true") {
+            bol = true;
+        }
+        else {
+            bol = false;
+        }
+        if (ctx.getText() != null) {
+            bol = !bol;
+        }
+        intermediateCodeGenerator.addIntermediateOutput("ADD REGISTER " + val);
         return super.visitCheckBoolean(ctx);
     }
 
@@ -84,10 +96,7 @@ public class CherishCompiler extends CherishBaseVisitor {
         return super.visitBooleanExpression(ctx);
     }
 
-    @Override
-    public Object visitComparator(CherishParser.ComparatorContext ctx) {
-        return super.visitComparator(ctx);
-    }
+
 
     @Override
     public Object visitAddExp(CherishParser.AddExpContext ctx) {
@@ -180,7 +189,7 @@ public class CherishCompiler extends CherishBaseVisitor {
     @Override
     public Object visitConditionalExp(CherishParser.ConditionalExpContext ctx) {
         intermediateCodeGenerator.addIntermediateOutput("START IF CONDITION");
-        visit(ctx.singleExp());
+        visit(ctx.boolExp());
         visit(ctx.progCode());
         intermediateCodeGenerator.addIntermediateOutput("END IF CONDITION");
         if(ctx.elseCondition() != null){
@@ -200,22 +209,10 @@ public class CherishCompiler extends CherishBaseVisitor {
     @Override
     public Object visitIterationExp(CherishParser.IterationExpContext ctx) {
         intermediateCodeGenerator.addIntermediateOutput("START WHILE");
-        visit(ctx.singleExp());
+        visit(ctx.boolExp());
         visit(ctx.progCode());
         intermediateCodeGenerator.addIntermediateOutput("END WHILE");
         return null;
-    }
-
-    @Override
-    public Object visitForLoop(CherishParser.ForLoopContext ctx) {
-        visit(ctx.assignStatement(0));
-        intermediateCodeGenerator.addIntermediateOutput("START FOR LOOP");
-        intermediateCodeGenerator.addIntermediateOutput("CHECKS CONDITION");
-        visit(ctx.relativeExp());
-        visit(ctx.progCode());
-        visit(ctx.assignStatement(1));
-        intermediateCodeGenerator.addIntermediateOutput("END FOR LOOP");
-        return super.visitForLoop(ctx);
     }
 
 
