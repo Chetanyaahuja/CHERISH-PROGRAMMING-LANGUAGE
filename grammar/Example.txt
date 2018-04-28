@@ -3,6 +3,20 @@ int a = 2
 int b = 5
 Display (a)
 Display (b)
-int c =a+b
-Display(c)
+int c = b/a
+int d = b%a
+int e = a*b
+Display (c)
+Display (d)
+Display (e)
+if (a > b) {
+    Display (a)
+} else {
+    Display(b)
+}
+while(b > 2) {
+a = a+1
+Display (a+b)
+b = b-1
+}
 end
