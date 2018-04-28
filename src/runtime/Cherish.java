@@ -18,7 +18,14 @@ public class Cherish
         HashMap<String, String> map = new HashMap<>();
         while(t.hasMoreTokens()) {
             String str = t.nextToken();
-            switch(str) {
+            switch(str) 
+            {
+                case "EQL":
+                    s.push(str);
+                    break;
+                case "IF":
+                    s.push(str);
+                    break;
                 case "MOV":
                     s.push(str);
                     break;
@@ -35,7 +42,7 @@ public class Cherish
                             popped.equals("SUB") || popped.equals("MUL") || popped.equals("DIV") || popped.equals("REM")
                             || popped.equals("INC") || popped.equals("DEC") || popped.equals("GEQL") ||
                             popped.equals("LEQL") || popped.equals("LESS") || popped.equals("GRT")
-                            || popped.equals("EQL") || popped.equals("NEQL")))
+                            || popped.equals("EQL") || popped.equals("NEQL") || popped.equals("IF")))
                     {
                         x.add(popped);
                         popped = s.pop();
@@ -174,6 +181,15 @@ public class Cherish
                     s.push(val);
 
                 }
+                    if (popped.equals("IF")) {
+                            int b;
+
+                            if (isNumeric(x.get(0)))
+                                b = Integer.parseInt(x.get(0));
+                            else
+                                b = Integer.parseInt(map.get(x.get(0)));
+                            map.put(x.get(0), b + "");
+                        }
 
                     if(popped.equals("LEQL")) {
                         int a,b;
@@ -223,21 +239,23 @@ public class Cherish
                         s.push(val);
                     }
 
-                    if(popped.equals("EQL")) {
-                        int a,b;
-                        Boolean c;
-                        if(isNumeric(x.get(1)))
-                            a = Integer.parseInt(x.get(1));
-                        else
-                            a = Integer.parseInt(map.get(x.get(1)));
-                        if(isNumeric(x.get(0)))
-                            b = Integer.parseInt(x.get(0));
-                        else
-                            b = Integer.parseInt(map.get(x.get(0)));
-                        c = (a == b);
-                        String val = "" + c;
-                        s.push(val);
-                    }
+                    if (popped.equals("EQL")) {
+                            int a, b;
+                            Boolean c;
+                            if (isNumeric(x.get(1)))
+                                a = Integer.parseInt(x.get(1));
+                            else
+                                a = Integer.parseInt(map.get(x.get(1)));
+                            if (isNumeric(x.get(0)))
+                                b = Integer.parseInt(x.get(0));
+                            else
+                                b = Integer.parseInt(map.get(x.get(0)));
+                            c = (a == b);
+                            if(c)
+                                s.push("1");
+                            else
+                                s.push("0");
+                        }
 
                     if(popped.equals("NEQL")) {
                         int a,b;
@@ -254,6 +272,7 @@ public class Cherish
                         String val = "" + c;
                         s.push(val);
                     }
+            }
                     break;
                 default:
                     s.push(str);
@@ -273,11 +292,17 @@ public class Cherish
         }
         return true;
     }
+    public static boolean geql(int a, int b)
+    {
+        Boolean c;
+        c = (a >= b);
+        return c;
+    }
 
     public static void main(String args[])
     {
         Cherish c = new Cherish();
-        String inputIntermediateCode = "MOV x 5 ; MOV y 100 ; SUB x y ; ADD x 90 ; DISPLAY x ;";
+        String inputIntermediateCode = "MOV a 6 ; IF EQL a 6 ; DISPLAY 9 ; ";
         c.runCode(inputIntermediateCode);
     }
 }
