@@ -9,6 +9,9 @@ import java.util.StringTokenizer;
 /**
  * @author Chetanya Ahuja
  * @author Drishty Kapoor
+ * Hashmap is used to store symbols, intStack is used for arithmetic Expressions
+ * booleanStack store boolean results
+ * Switch cases handle IC Symobols and result accordingly
  */
 
 public class Cherish
@@ -19,7 +22,9 @@ public class Cherish
     public static Stack<Boolean> isIterate = new Stack<Boolean>(); 
     public static int position = 0;
     public static String[] ic;
-
+/**
+ * moveToBegin and moveToEnd are used to set the position of implementation in "IF" and "ITERATER"
+ */
     public void moveToBegin(String s) {
     		int i = position;
     		while (i >= 0) {
@@ -41,7 +46,7 @@ public class Cherish
 			i++;
 		}
 }
-    
+	
     public void execute(String line) {
             String[] command = line.split(" ");
             int temp = 0;
