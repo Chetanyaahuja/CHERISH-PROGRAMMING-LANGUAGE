@@ -19,10 +19,10 @@ statements
     ;
 
 assignStatement
-    : 'int' LOWERCASE ('=' arithExp)?                     #integerAssign
-    | LOWERCASE '=' arithExp                              #integerAssign
-    | 'boolean' LOWERCASE ('=' boolExp)?                  #booleanAssign
-    | LOWERCASE '=' boolExp		                          #booleanAssign
+    : 'int' LOWERCASE ('=' arithExp)?                           #integerAssign
+    | LOWERCASE '=' arithExp                                    #integerAssign
+    | 'boolean' LOWERCASE ('=' boolExp)?                        #booleanAssign
+    | LOWERCASE '=' boolExp		                                #booleanAssign
     ;
 
 boolExp
