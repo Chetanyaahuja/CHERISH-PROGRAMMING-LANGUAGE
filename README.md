@@ -8,6 +8,24 @@
 
 CHERISH – “A Happy Language”
 
+                                                      BONUS POINTS
+                                                      
+We implemented print statment named as "Display ()" in our language to display the variable or value on console:
+
+start
+int a = 5
+int b = a + 9
+Display (b)
+Display (a);
+end
+
+The output will be:
+
+14
+5
+
+Added if statements and While loop
+
                                                   STEPS TO RUN THE PROJECT
 
 1) Change diresctory to the folder where the project is stored by command "cd".
@@ -65,7 +83,33 @@ CHERISH – “A Happy Language”
                                                             TOOLS USED
                                                             
 ➢ ANTLR 4: To create Parse Tree and override BaseListener to generate Intermediate Code
+
 ➢ JAVA
+
 ➢ ECLIPSE
+
 ➢ GIT
+
 ➢ INTELIJ
+
+                                                       INTERMEDIATE CODE 
+
+
+1. Using customized notation for Decision and Iterative Constructs. 
+
+
+For instance: notation used for while() is ITERATOR, 
+
+>= is GEQL, 
+
+!= is NEQL.
+
+2. Adding if as IF in IC.
+
+
+3. We are using top down parsing technique. This technique parses the input and constructs a parse tree from the root node and then gradually moves down towards the leaf nodes. We are using Recursive descent parsing technique. In this, the parse tree is constructed from the top and the input is read from left to right. Procedure is used for every terminal and non-terminal entity. The tokens generated from the Lexer go as input to the Parser. 
+
+
+
+4. Data Structures: Here, we are using Stack, StringBuilder and HashMap as data structures. 
+
