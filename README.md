@@ -16,3 +16,16 @@ Steps to run the Program:
 3) To compile and run the Cherish.java in order to handle the runtime, run the following commands:
   a) javac -d . -cp .:src/:lib/antlr-4.7.1-complete.jar src/runtime/Cherish.java
   b) java -cp .:src/:lib/antlr-4.7.1-complete.jar Cherish
+  
+  OR
+  
+  1) Open the project on Eclipse.
+  
+  
+  2) Now run MainCherish.java present in the src/compiler. It will give you the IC for the example.txt present in the folder         Grammar and a new file named example.cherish will be created in the Grammar folder.
+  
+  
+  3) Now run Cherish.java present in src/runtime. It will give you output of the example.txt on console after handling the IC     instructions.
+  
+  
+  4) There are 5 sample programs in the grammar folder, whichever you wants to run just rename that one as "example.txt" and       follow the above written steps. 
