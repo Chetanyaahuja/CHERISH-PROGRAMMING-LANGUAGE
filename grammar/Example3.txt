@@ -1,0 +1,9 @@
+start
+int x = 5
+int y = 6
+if ( x % 2 == 0 ) {
+	Display (x)
+} else {
+	Display (y)	
+}
+end
