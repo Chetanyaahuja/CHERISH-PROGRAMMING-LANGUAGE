@@ -9,7 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-
+/*
+* This is our main class, which generates IC taking input from Example.txt
+*/
 public class MainCherish {
 
         public static void main(String args[]){
@@ -29,8 +31,7 @@ public class MainCherish {
 
                 CherishIC ic = new CherishIC();
                 ParseTreeWalker.DEFAULT.walk(ic, parseTree);
-               /* CherishCompiler compiler = new CherishCompiler();
-                compiler.visit(parseTree);*/
+               
                 
                 StringBuilder icCode = ic.getICOutput();
                 System.out.println(icCode);
