@@ -7,6 +7,10 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 /**
  * @author Drishty Kapoor
  * @author Chetanya Ahuja
+ * This is our Intermediate Code where we have created a String Builder
+ * and assigned names to the operators, boolean expressions, if, while
+ * etc which can be displayed in the Intermediate Code
+ * whenever they are encountered in the program.
  */
 
 public class CherishIC extends CherishBaseListener {
