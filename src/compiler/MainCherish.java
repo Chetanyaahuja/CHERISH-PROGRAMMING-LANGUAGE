@@ -14,6 +14,8 @@ public class MainCherish {
 
         public static void main(String args[]){
             String filename = "grammar/Example.txt";
+            if(args.length > 0) {
+            	filename = args[0];	
             try {
                 src.compiler.CherishLexer lexer = new CherishLexer(CharStreams.fromFileName(filename));
 
