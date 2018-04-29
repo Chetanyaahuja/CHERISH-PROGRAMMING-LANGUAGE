@@ -5,9 +5,9 @@ INDIVIDUAL CONTRIBUTIONS TILL MILESTONE 2:
   Gathered knowledge about Parser - Natalya
 
 INDIVIDUAL CONTRIBUTIONS MILESTONE 3:
-  Lexical analyzer, Parser (According to Updated Grammar) - Natalya, Himanshu
+  Lexical analyzer, Parser (According to Updated Grammar) - Chetanya, Drishty, Natalya, Himanshu
   Intermediate Code - Drishty, Chetanya, Natalya
   Runtime - Chetanya, Drishty
   Main - Himanshu, Natalya
-  Presentation - Himanshu, Natalya
+  Presentation - Chetanya, Drishty, Himanshu, Natalya
   Video - All
