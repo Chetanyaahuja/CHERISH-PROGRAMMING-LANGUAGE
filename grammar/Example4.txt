@@ -1,0 +1,8 @@
+start
+int x = 10
+int y = 400
+while (y > 10) {
+y = y/x
+}
+Display (y)
+end
