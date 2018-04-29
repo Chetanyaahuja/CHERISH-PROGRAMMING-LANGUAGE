@@ -6,7 +6,7 @@ INDIVIDUAL CONTRIBUTIONS TILL MILESTONE 2:
 
 INDIVIDUAL CONTRIBUTIONS MILESTONE 3:
   Lexical analyzer, Parser (According to Updated Grammar) - Natalya, Himanshu
-  Intermediate Code - Drishty, Chetanya
+  Intermediate Code - Natalya, Drishty, Chetanya
   Runtime - Chetanya, Drishty
   Main - Himanshu, Natalya
   Presentation - Himanshu, Natalya
