@@ -1,0 +1,9 @@
+start
+int a = 1
+if ( a > 0 ) {
+	a=a*10
+} else {
+	a = a+1
+}
+Display (a)
+end
