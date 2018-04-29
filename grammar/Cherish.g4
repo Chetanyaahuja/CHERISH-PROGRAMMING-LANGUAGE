@@ -19,17 +19,14 @@ statements
     ;
 
 assignStatement
-    : 'int' LOWERCASE ('=' arithExp)?                           #integerAssign
-    | LOWERCASE '=' arithExp                                    #integerAssign
-    | 'boolean' LOWERCASE ('=' boolExp)?                        #booleanAssign
-    | LOWERCASE '=' boolExp		                                #booleanAssign
+    : 'int' LOWERCASE ('=' arithExp)?                     #integerAssign
+    | LOWERCASE '=' arithExp                              #integerAssign
+    | 'boolean' LOWERCASE ('=' boolExp)?                  #booleanAssign
+    | LOWERCASE '=' boolExp		                          #booleanAssign
     ;
 
 boolExp
     : arithExp ('=='|'!=' | '>' | '<' | '<=' | '>=') arithExp	#booleanExpression
-    | boolExp ('&&'| '||') boolExp								#booleanAndOr
-    | (NOT)? LOWERCASE                                      	#checkLowercase
-    | (NOT)? BOOLEAN                                        	#checkBoolean
     | comparator                                            	#comparison
     ;
 
@@ -76,8 +73,6 @@ comparator
     | arithExp EQUALS arithExp                      #equal
     | arithExp NOTEQUALS arithExp                   #notEqual
     ;
-
-NOT : '!';
 
 BOOLEAN
     : 'true'

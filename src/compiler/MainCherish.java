@@ -15,7 +15,7 @@ public class MainCherish {
         public static void main(String args[]){
             String filename = "grammar/Example.txt";
             try {
-                CherishLexer lexer = new CherishLexer(CharStreams.fromFileName(filename));
+                src.compiler.CherishLexer lexer = new CherishLexer(CharStreams.fromFileName(filename));
 
                 CommonTokenStream tokens = new CommonTokenStream(lexer);
 

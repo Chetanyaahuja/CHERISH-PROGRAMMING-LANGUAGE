@@ -7,8 +7,8 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 /**
- * @author Drishty Kapoor
  * @author Chetanya Ahuja
+ * @author Drishty Kapoor
  */
 
 public class Cherish
@@ -46,9 +46,6 @@ public class Cherish
             String[] command = line.split(" ");
             int temp = 0;
             switch(command[0]) {
-                case "DEC" :
-                    symbolTable.put(command[1], 0);
-                    break;
                 case "MOV" :
                     symbolTable.put(command[1], intStack.pop());
                     break;
@@ -152,6 +149,9 @@ public class Cherish
                 case "ITERATE_END" :
                 		this.moveToBegin("ITERATE");
                 		break;
+                case "DEC" :
+                    symbolTable.put(command[1], 0);
+                    break;
                 default :
                 		break;
         }

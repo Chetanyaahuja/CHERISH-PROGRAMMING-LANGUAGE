@@ -4,6 +4,11 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
+/**
+ * @author Drishty Kapoor
+ * @author Chetanya Ahuja
+ */
+
 public class CherishIC extends CherishBaseListener {
 	static StringBuilder ic = new StringBuilder();
 	
